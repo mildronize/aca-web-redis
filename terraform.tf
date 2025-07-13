@@ -64,8 +64,8 @@ resource "azurerm_container_app" "redis" {
     container {
       name   = "redis"
       image  = "redis:7.2"
-      cpu    = 0.5
-      memory = "1Gi"
+      cpu    = 0.25
+      memory = "0.5Gi"
     }
 
     min_replicas = 0
@@ -101,8 +101,8 @@ resource "azurerm_container_app" "web" {
     container {
       name   = "web"
       image  = "ghcr.io/mildronize/kubricate-demo-azure-global-2025:main"
-      cpu    = 0.5
-      memory = "1Gi"
+      cpu    = 0.25
+      memory = "0.5Gi"
 
       env {
         name  = "REDIS_HOST"
